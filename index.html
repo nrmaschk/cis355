@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $( document ).ready(function() { 
+            personsRequest("displayList");
+        });
+        
+        // Submit a request to the persons table.
+        function personsRequest(action, id) {
+            $.post(
+                "index.php",
+                "table="   + "courses"          +
+                "&action=" + action             +
+                "&id="     + id                 +
+                "&name="   + $("#name").val()   +
+				"&description="   + $("#description").val()   +
+				"&address="  + $("#address").val()  +
+				"&city="  + $("#city").val()  +
+				"&state="  + $("#state").val()  +
+                "&mobile=" + $("#mobile").val() +
+				"&email="  + $("#email").val()  +
+				"&par_01="  + $("#par_01").val() + 
+				 "&par_02="  + $("#par_02").val()  +
+				"&par_03="  + $("#par_03").val()  +
+				"&par_04="  + $("#par_04").val()  +
+				"&par_05="  + $("#par_05").val()  +
+				"&par_06="  + $("#par_06").val()  +
+				"&par_07="  + $("#par_07").val()  +
+				"&par_08="  + $("#par_08").val()  +
+				"&par_09="  + $("#par_09").val()  +
+				"&par_10="  + $("#par_10").val()  +
+				"&par_11="  + $("#par_11").val()  +
+				"&par_12="  + $("#par_12").val()  +
+				"&par_13="  + $("#par_13").val()  +
+				"&par_14="  + $("#par_14").val()  +
+				"&par_15="  + $("#par_15").val()  +
+				"&par_16="  + $("#par_16").val()  +
+				"&par_17="  + $("#par_17").val()  +
+				"&par_18="  + $("#par_18").val()  
+				 
+				
+				
+				
+            ).done(function( msg ) { 
+                $("#content").html( msg );
+            });
+        }
+    </script>
+    <style>
+        .btn {
+            width: 75px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
